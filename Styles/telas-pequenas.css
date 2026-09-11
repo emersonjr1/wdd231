@@ -1,0 +1,191 @@
+/* Configurações Globais */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #003366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header .logo {
+    width: 40px;
+    height: auto;
+}
+
+/* Botão do Menu Hambúrguer */
+#menu {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "❌";
+}
+
+/* Navegação */
+nav {
+    background-color: #333;
+}
+
+.navegacao {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.navegacao.open {
+    display: block;
+}
+
+.navegacao li a {
+    display: block;
+    padding: 0.8rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navegacao li a:hover,
+.navegacao li a.active {
+    background-color: #555;
+}
+
+/* Layout do Main */
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #003366;
+}
+
+/* Container dos Cards Pessoais (Sobre Mim e Foto) */
+.sectCardsPersonal {
+    display: grid;
+    grid-template-columns: 1fr; /* Em telas pequenas, fica empilhado */
+    gap: 1.5rem;                /* Espaço entre os containers */
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo Padrão para Seções/Cards */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #003366;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* Filtros e Lista de Cursos */
+.filtros {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.filtros button {
+    flex: 1;
+    padding: 0.6rem;
+    cursor: pointer;
+    border: 1px solid #003366;
+    background-color: #fff;
+    color: #003366;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.filtros button:hover {
+    background-color: #003366;
+    color: #fff;
+}
+
+.container-cursos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.curso-card {
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.curso-card.concluido {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.curso-card.pendente {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+#total-creditos {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+}
+
+.redes-sociais {
+    margin-bottom: 1rem;
+}
+
+.redes-sociais img {
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+    transition: transform 0.2s;
+}
+
+.redes-sociais img:hover {
+    transform: scale(1.1);
+}

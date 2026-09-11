@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página Inicial do curso WDD 231 - Emerson Maximo Junior">
+    <meta name="author" content="Emerson Maximo Junior">
+    <title>Página Inicial - WDD 231</title>
+
+    <link rel="shortcut icon" href="images/Boneco-Emerson.jpg" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Styles/normalize.css">
+    <link rel="stylesheet" href="./Styles/telas-pequenas.css">
+    <link rel="stylesheet" href="./Styles/maior.css">
+
+    <!-- JS -->
+    <script src="./scripts/navegacao.js" defer></script>
+    <script src="./scripts/data.js" defer></script>
+    <script src="./scripts/curso.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="./images/Boneco-Emerson.jpg" alt="Logotipo do site" class="logo">
+        <h1><span>Emerson Maximo Junior</span></h1>
+        <button id="menu" aria-label="Abrir Menu"></button>
+    </header>
+
+    <nav>
+        <ul class="navegacao">
+            <li><a href="#" class="active">Página Inicial</a></li>
+            <li><a href="#">Projeto da Câmara</a></li>
+            <li><a href="#">Projeto Final</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Página Inicial</h1>
+        <div class="sectCardsPersonal">
+            <section class="card">
+                <h2>Sobre Mim</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, itaque maxime. Facere consectetur quia obcaecati dignissimos esse laboriosam aut fugiat itaque id.</p>
+            </section>
+
+            <section class="card">
+                <h2>Foto</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit omnis, fugiat distinctio ipsa, doloribus nostrum maiores delectus porro earum perferendis.</p>
+            </section>
+        </div>
+        <section class="card full-width">
+            <h2>Cursos de Certificação Web</h2>
+            <div class="filtros">
+                <button id="todos">Todos</button>
+                <button id="cse">CSE</button>
+                <button id="wdd">WDD</button>
+            </div>
+            
+            <div id="container-cursos" class="container-cursos">
+                <!-- Inserido dinamicamente via JS -->
+            </div>
+
+            <p id="total-creditos"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="redes-sociais">
+            <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="./images/linkdin.png" alt="LinkedIn"></a>
+            <a href="https://github.com" target="_blank" rel="noopener"><img src="./images/github.png" alt="GitHub"></a>
+            <a href="https://x.com" target="_blank" rel="noopener"><img src="./images/X-logo.png" alt="X"></a>
+        </div>
+        <p>©<span id="anoAtual"></span> - Emerson Maximo Junior - Idaho, EUA</p>
+        <p id="ultimaModificacao"></p>
+    </footer>
+</body>
+</html>
