@@ -27,7 +27,7 @@
 
     /* Container dos Cards Pessoais lado a lado */
     .sectCardsPersonal {
-        grid-template-columns: 1fr 1fr; /* 2 colunas com espaço idêntico */
+        grid-template-columns: 2fr 1fr; /* 2 colunas com espaço idêntico */
         gap: 2rem;                       /* Espaçamento entre Sobre Mim e Foto */
     }
 
