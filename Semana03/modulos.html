@@ -1,0 +1,42 @@
+<html lang="pt-br"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Módulos: Curso e Seções</title>
+  <link rel="stylesheet" href="estilos/modulos.css">
+  <script type="module" src="scripts/modulos.mjs"></script>
+</head>
+<body>
+  <main>
+    <h1 id="nomeCurso">Desenvolvimento Frontend para Web I</h1>
+    <h2 id="codigoCurso">WDD231</h2>
+
+    <div id="matricula">
+      <p>Escolha uma seção:</p>
+      <select id="numeroSecao">
+        <option value="0" disabled="" selected="">--</option>
+      <option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+      <button id="matricularEstudante">Matricular Estudante</button>
+      <button id="removerEstudante">Remover Estudante</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Seção</th>
+          <th>Matriculado</th>
+          <th>Instrutor</th>
+        </tr>
+      </thead>
+      <tbody id="secoes"><tr>
+    <td>1</td>
+    <td>88</td>
+    <td>Irmão Silva</td></tr><tr>
+    <td>2</td>
+    <td>81</td>
+    <td>Irmã Pinheiro</td></tr><tr>
+    <td>3</td>
+    <td>95</td>
+    <td>Irmã Oliveira</td></tr></tbody>
+    </table>
+  </main>
+</body></html>
