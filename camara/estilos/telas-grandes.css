@@ -1,0 +1,39 @@
+@media screen and (min-width: 600px) {
+    /* Oculta o botão hambúrguer no Desktop */
+    #menu {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    
+    header h1 {
+        color: rgb(253, 253, 253);
+        margin-top: 10px;
+    }
+
+    /* Navegação Horizontal com Flexbox */
+    .navegacao {
+        display: flex !important;
+        justify-content: space-around;
+    }
+
+    .navegacao li {
+        flex: 1;
+    }
+
+    /* Container dos Cards Pessoais lado a lado */
+    .sectCardsPersonal {
+        grid-template-columns: 2fr 1fr; /* 2 colunas com espaço idêntico */
+        gap: 2rem;                       /* Espaçamento entre Sobre Mim e Foto */
+    }
+
+    /* Grid para os cartões de cursos */
+    .container-cursos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
