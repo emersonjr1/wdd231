@@ -4,7 +4,7 @@
     "endereco": "Av. Paulista, 1000 - Bela Vista, São Paulo - SP",
     "telefone": "(11) 3003-1234",
     "website": "https://www.techsulsolutions.com.br",
-    "imagem": "empresa_techsul.jpg",
+    "imagem": "nao.png",
     "nivelAssociacao": 3,
     "ramoAtuacao": "Desenvolvimento de Software e Inteligência Artificial"
   },
@@ -13,7 +13,7 @@
     "endereco": "Rua das Flores, 450 - Centro, Curitiba - PR",
     "telefone": "(41) 3224-5678",
     "website": "https://www.bioverdeorganicos.com.br",
-    "imagem": "empresa_bioverde.png",
+    "imagem": "nao.png",
     "nivelAssociacao": 2,
     "ramoAtuacao": "Distribuição de Alimentos Orgânicos e Sustentabilidade"
   },
@@ -22,7 +22,7 @@
     "endereco": "Rodovia Anhanguera, km 98 - Industrial, Campinas - SP",
     "telefone": "(19) 3789-9000",
     "website": "https://www.inovalogistica.com.br",
-    "imagem": "empresa_inova_log.webp",
+    "imagem": "nao.png",
     "nivelAssociacao": 3,
     "ramoAtuacao": "Logística, Transportes e Gestão de Cadeia de Suprimentos"
   },
@@ -31,7 +31,7 @@
     "endereco": "Praça Rui Barbosa, 85 - Centro, Poços de Caldas - MG",
     "telefone": "(35) 3722-1122",
     "website": "https://www.cafemogiana.com.br",
-    "imagem": "empresa_cafe_mogiana.jpg",
+    "imagem": "nao.png",
     "nivelAssociacao": 1,
     "ramoAtuacao": "Produção e Exportação de Cafés Especiais"
   },
@@ -40,7 +40,7 @@
     "endereco": "Av. Beira Mar, 1200 - Meireles, Fortaleza - CE",
     "telefone": "(85) 3456-7890",
     "website": "https://www.solarisenergia.com.br",
-    "imagem": "empresa_solaris.png",
+    "imagem": "nao.png",
     "nivelAssociacao": 3,
     "ramoAtuacao": "Instalação de Painéis Fotovoltaicos e Energia Limpa"
   },
@@ -49,7 +49,7 @@
     "endereco": "Rua Sete de Setembro, 310, Sala 502 - Centro, Porto Alegre - RS",
     "telefone": "(51) 3112-4455",
     "website": "https://www.alfacontabil.com.br",
-    "imagem": "empresa_alfa_contabil.png",
+    "imagem": "nao.png",
     "nivelAssociacao": 1,
     "ramoAtuacao": "Serviços Contábeis, Fiscais e Planejamento Tributário"
   },
@@ -58,7 +58,7 @@
     "endereco": "Av. Niemeyer, 50 - Leblon, Rio de Janeiro - RJ",
     "telefone": "(21) 2511-9988",
     "website": "https://www.designurbano.com.br",
-    "imagem": "empresa_design_urbano.jpg",
+    "imagem": "nao.png",
     "nivelAssociacao": 2,
     "ramoAtuacao": "Projetos Arquitetônicos e Design de Interiores"
   }
