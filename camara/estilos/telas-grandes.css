@@ -47,3 +47,27 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Layout em Grade para Telas Grandes (3 colunas) */
+.grid-view {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Layout em Lista para Telas Grandes (Linhas horizontais) */
+.list-view .card-membro {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.list-view .card-membro img {
+    margin: 0 1rem 0 0;
+}
+
+.list-view .info-membro {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}

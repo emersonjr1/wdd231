@@ -218,3 +218,101 @@ footer {
 .redes-sociais img {
     border-radius: 50%;
 }
+
+/* Controles do Diretório */
+.controles-view {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.controles-view button {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #003366;
+    background-color: #ffffff;
+    color: #003366;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.controles-view button.ativo,
+.controles-view button:hover {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+/* Regra reutilizada de Imagens (Fundo Branco, Moldura e Centralização) */
+.card-membro img {
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 8px;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: block;
+    margin: 0 auto 0.8rem;
+}
+/* Container de Cartões em Grade */
+.grid-view {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Card Individual do Membro */
+.card-membro {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Imagem do Logo com Fundo Branco */
+.card-membro img {
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 8px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+/* Estilos de Badges de Associação */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+}
+
+.badge-nivel-1 { background-color: #cd7f32; color: #fff; } /* Bronze */
+.badge-nivel-2 { background-color: #c0c0c0; color: #333; } /* Prata */
+.badge-nivel-3 { background-color: #ffd700; color: #333; } /* Ouro */
+
+/* Visualização em Lista */
+.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.list-view .card-membro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 0.8rem;
+}

@@ -1,75 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página Inicial do projeto camara">
+    <meta name="description" content="Diretório de empresas e membros associados à Câmara de Comércio de Piracicaba. Conecte-se com o comércio local.">
     <meta name="author" content="Emerson Maximo Junior">
 
-    <title>Camara de Comercio</title>
+    <title>Câmara de Comércio de Piracicaba | Diretório de Membros</title>
 
-    
-     <!-- CSS -->
-    <link rel="stylesheet" href="./estilos/normalize.css">
-    <link rel="stylesheet" href="./estilos/telas-pequenas.css">
-    <link rel="stylesheet" href="./estilos/telas-grandes.css">
-
-    <!--Link-->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./imagens/Logo_maos.ico" type="image/x-icon">
+
+    <!-- CSS (Apenas normalize + telas-pequenas + telas-grandes) -->
     <link rel="stylesheet" href="./estilos/normalize.css">
     <link rel="stylesheet" href="./estilos/telas-pequenas.css">
     <link rel="stylesheet" href="./estilos/telas-grandes.css">
-    
 
-    <!-- Metadados Open Graph (Facebook, LinkedIn e WhatsApp) -->
+    <!-- Metadados Open Graph (Facebook / LinkedIn / WhatsApp) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Câmara de Comércio">
-    <meta property="og:description" content="Conectando empresas, empreendedores e oportunidades para fortalecer o comércio e promover o desenvolvimento dos negócios.">
-    <meta property="og:image" content="https://seusite.com/images/logo.png">
-    <meta property="og:url" content="https://seusite.com">
-    <meta property="og:site_name" content="Câmara de Comércio">
+    <meta property="og:title" content="Diretório de Membros - Câmara de Comércio de Piracicaba">
+    <meta property="og:description" content="Explore o diretório das empresas parceiras e associadas da nossa região.">
+    <meta property="og:image" content="https://emersonmaximo.github.io/wdd231/camara/imagens/hero_piracicaba.jpg">
+    <meta property="og:url" content="https://emersonmaximo.github.io/wdd231/camara/diretorio.html">
+    <meta property="og:site_name" content="Câmara de Comércio de Piracicaba">
 
     <!-- Metadados X / Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Câmara de Comércio">
-    <meta name="twitter:description" content="Conectando empresas, empreendedores e oportunidades para fortalecer o comércio e promover o desenvolvimento dos negócios.">
-    <meta name="twitter:image" content="https://seusite.com/images/logo.png">
+    <meta name="twitter:title" content="Diretório de Membros - Câmara de Comércio de Piracicaba">
+    <meta name="twitter:description" content="Explore o diretório das empresas parceiras e associadas da nossa região.">
+    <meta name="twitter:image" content="https://emersonmaximo.github.io/wdd231/camara/imagens/hero_piracicaba.jpg">
 
-    <!--JS-->
-    <script src="./scripts/camara.js"></script>
-    <script src="./scripts/data.js"></script>
-
+    <!-- Scripts da página -->
+    <script src="./scripts/camara.js" defer></script>
+    <script src="./scripts/Modulos/diretorio/diretorio.mjs" type="module"></script>
 </head>
 <body>
     <header>
-        <img class="logo" src="./imagens/camara_comercio.png" alt="Logo da camara comercio.">
+        <div class="header-container">
+            <img class="logo" src="./imagens/camara_comercio.png" alt="Logo da Câmara de Comércio de Piracicaba" width="100" height="100">
+            <div class="header-titulo">
+                <h1>Câmara de Comércio</h1>
+                <p>Piracicaba - SP</p>
+            </div>
+            <button id="btnMenu" aria-label="Abrir Menu de Navegação">☰</button>
+        </div>
         <nav>
-
+            <ul class="navegacao" id="menuNavegacao">
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="diretorio.html" class="active">Diretório</a></li>
+                <li><a href="#">Junte-se a Nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
         </nav>
     </header>
-    <main>
 
+    <main class="diretorio-container">
+        <h2>Diretório de Membros</h2>
+
+        <!-- Botões para alternância entre visualização em Grade e Lista -->
+        <div class="controles-view">
+            <button id="btnGrid" class="ativo" aria-label="Visualização em Grade">📱 Grade</button>
+            <button id="btnList" aria-label="Visualização em Lista">📄 Lista</button>
+        </div>
+
+        <!-- Container dinâmico onde o directory.mjs injetará os membros -->
+        <section id="membrosContainer" class="grid-view">
+            <!-- Conteúdo gerado via JS -->
+        </section>
     </main>
+
     <footer>
-        <div>
-            <h3>Piracicaba</h3><br>
-            <p>Rua XV de Novembro</p>
-            <p>info@piracicaba.com.br</p>
-            <p>(19) 00000-0000</p>
+        <div class="footer-info">
+            <h3>Câmara de Comércio de Piracicaba</h3>
+            <p>Rua XV de Novembro, 1000 - Centro</p>
+            <p>Piracicaba - SP | CEP 13400-000</p>
+            <p>info@piracicaba.com.br | (19) 3400-0000</p>
         </div>
-         <div class="redes-sociais">
-            <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="./imagens/linkedin-logo.jpg" alt="LinkedIn"></a>
-            <a href="https://github.com" target="_blank" rel="noopener"><img src="./imagens/github.png" alt="GitHub"></a>
-            <a href="https://x.com" target="_blank" rel="noopener"><img src="./imagens/X-logo.png" alt="X"></a>
+        <div class="redes-sociais">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="./imagens/linkedin-logo.jpg" alt="LinkedIn" width="30" height="30"></a>
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><img src="./imagens/github.png" alt="GitHub" width="30" height="30"></a>
+            <a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><img src="./imagens/xx-logo.png" alt="X" width="30" height="30"></a>
         </div>
-        <div>
-            <h3>Projeto de Aula</h3>
-            <p>Emerson Junior</p>
-            <p>©<span id="anoAtual"></span> - Emerson Maximo Junior - Idaho, EUA</p>
+        <div class="footer-creditos">
+            <p>WDD 231 - Projeto de Aula</p>
+            <p>Emerson Maximo Junior</p>
+            <p>© <span id="anoAtual"></span> - Piracicaba, SP</p>
             <p id="ultimaModificacao"></p>
         </div>
-        
     </footer>
 </body>
 </html>
-
