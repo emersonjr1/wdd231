@@ -1,39 +1,49 @@
-@media screen and (min-width: 600px) {
-    /* Oculta o botão hambúrguer no Desktop */
-    #menu {
+@media screen and (min-width: 768px) {
+    /* Esconde o botão do menu e exibe navegação horizontal */
+    #btnMenu {
         display: none;
     }
 
-    header {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-    }
-    
-    header h1 {
-        color: rgb(253, 253, 253);
-        margin-top: 10px;
-    }
-
-    /* Navegação Horizontal com Flexbox */
     .navegacao {
         display: flex !important;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 0;
     }
 
-    .navegacao li {
-        flex: 1;
+    .navegacao li a {
+        border-bottom: none;
+        border-radius: 4px;
     }
 
-    /* Container dos Cards Pessoais lado a lado */
-    .sectCardsPersonal {
-        grid-template-columns: 2fr 1fr; /* 2 colunas com espaço idêntico */
-        gap: 2rem;                       /* Espaçamento entre Sobre Mim e Foto */
+    /* Layout da Home em Grid Multi-colunas */
+    .grid-home {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "hero hero"
+            "eventos clima"
+            "destaques destaques";
     }
 
-    /* Grid para os cartões de cursos */
-    .container-cursos {
+    .hero-container {
+        grid-area: hero;
+    }
+
+    .eventos {
+        grid-area: eventos;
+    }
+
+    .clima {
+        grid-area: clima;
+    }
+
+    .destaques-container {
+        grid-area: destaques;
+    }
+
+    /* Grade de Membros em Destaque no Desktop */
+    .grid-destaques {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
     }
 }
