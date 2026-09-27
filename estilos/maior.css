@@ -36,4 +36,15 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
+
+    /* Ajustes exclusivos para telas maiores */
+.btn-Modal {
+    font-size: 1.1rem;
+    padding: 12px 18px;
 }
+
+#btnFecharDialog {
+    padding: 8px 16px;
+}
+}
+

@@ -189,3 +189,61 @@ footer {
 .redes-sociais img:hover {
     transform: scale(1.1);
 }
+
+/* --- BOTÕES DOS CARDS --- */
+.btn-Modal {
+    width: 100%;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #2c3e50;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-Modal:hover {
+    color: #0056b3;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* --- BOTÃO DE FECHAR O MODAL --- */
+#btnFecharDialog {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 6px 14px;
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#btnFecharDialog:hover {
+    background-color: #c0392b;
+}
+
+/* --- BOTÕES DE FILTRO (TODOS, CSE, WDD) --- */
+#todos, #cse, #wdd {
+    padding: 8px 16px;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#todos:hover, #cse:hover, #wdd:hover {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border-color: #2c3e50;
+}

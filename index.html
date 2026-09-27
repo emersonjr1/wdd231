@@ -77,6 +77,14 @@
                 <!-- Inserido dinamicamente via JS -->
             </div>
 
+            <!-- Modal movido para fora do container para não ser apagado no innerHTML -->
+            <dialog id="cursoModal">
+                <button id="btnFecharDialog">Close</button>
+                <h2 id="modalTitle"></h2> <!-- Corrigido de modalTitolo para modalTitle -->
+                <p id="modalDescricao"></p>
+                <p><strong>Créditos: </strong><span id="modalCredits"></span></p>
+            </dialog>
+
             <p id="total-creditos"></p>
         </section>
     </main>
