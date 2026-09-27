@@ -1,4 +1,6 @@
 /* Configurações Globais */
+ 
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
@@ -315,4 +317,85 @@ footer {
     align-items: center;
     text-align: left;
     padding: 0.8rem;
+}
+
+/* Layout Mobile-First para Cabeçalho e Rodapé */
+header {
+  background-color: var(--primary-color, #1a365d);
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-titulo h1 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+.header-titulo p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+#btnMenu {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.navegacao {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navegacao a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 4px;
+}
+
+.navegacao a.active,
+.navegacao a:hover {
+  background-color: var(--primary-hover, #2b6cb0);
+}
+
+/* Rodapé */
+footer {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.redes-sociais img {
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.redes-sociais img:hover {
+  transform: scale(1.15);
 }
