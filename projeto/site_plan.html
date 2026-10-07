@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento do Site - DevAcademy & Certs</title>
+    <style>
+        /* Define as variáveis do esquema de cores para reuso */
+        :root {
+            --primary-color: #1e293b;   /* Azul Escuro / Slate */
+            --secondary-color: #0284c7; /* Azul Oceano */
+            --accent-color: #f59e0b;    /* Âmbar / Dourado */
+            --bg-light: #f8fafc;        /* Cinza Claro */
+            --text-dark: #0f172a;       /* Texto Escuro */
+            --heading-font: 'Roboto', sans-serif;
+            --body-font: 'Open Sans', sans-serif;
+        }
+
+        /* Aplicação da tipografia e cores padrão no documento */
+        body {
+            font-family: var(--body-font);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--heading-font);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1.5rem;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        /* Demonstração visual do esquema de cores */
+        .color-palette {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .color-box {
+            flex: 1;
+            min-width: 150px;
+            padding: 15px;
+            border-radius: 6px;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .bg-primary { background-color: var(--primary-color); }
+        .bg-secondary { background-color: var(--secondary-color); }
+        .bg-accent { background-color: var(--accent-color); color: #000; }
+        .bg-light { background-color: #e2e8f0; color: #000; }
+
+        /* Estilo dos Wireframes */
+        .wireframe-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        @media (min-width: 600px) {
+            .wireframe-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .wireframe-box {
+            border: 2px dashed var(--primary-color);
+            padding: 15px;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .wireframe-sketch {
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 10px;
+            text-align: left;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Planejamento do Site: DevAcademy & Certs</h1>
+        <p>Documento Guia de Design e Estrutura</p>
+    </header>
+
+    <main>
+        <!-- 1. Nome do Site -->
+        <section>
+            <h2>1. Nome do Site</h2>
+            <p><strong>Nome:</strong> DevAcademy & Certs</p>
+            <p><strong>Razão da escolha:</strong> Escolhi este nome porque reflete diretamente o propósito do projeto: unir um ecossistema de aprendizado e capacitação para desenvolvedores de TI (<em>DevAcademy</em>) à organização e exibição pública dos certificados conquistados (<em>Certs</em>).</p>
+        </section>
+
+        <!-- 2. Finalidade do Site -->
+        <section>
+            <h2>2. Finalidade do Site</h2>
+            <p>O site serve como um portal agregador de capacitação gratuita em Tecnologia da Informação e um currículo/portfólio dinâmico para o estudante. Ele oferece:</p>
+            <ul>
+                <li>Um catálogo interativo e filtrável de cursos e bootcamps gratuitos em TI (carregados assincronamente de um JSON local).</li>
+                <li>Modalidades de detalhes e ementa do curso com recurso para salvar cursos de interesse no <code>localStorage</code>.</li>
+                <li>Roadmaps de carreira (Frontend, Backend, Dados) para orientação de estudos.</li>
+                <li>Um painel/gerenciador de certificados onde o usuário pode cadastrar, organizar e visualizar suas conquistas acadêmicas.</li>
+            </ul>
+        </section>
+
+        <!-- 3. Cenários -->
+        <section>
+            <h2>3. Cenários do Público-Alvo</h2>
+            <ul>
+                <li><strong>Cenário 1:</strong> "Sou um estudante iniciante em transição de carreira para Desenvolvimento Frontend. Onde posso encontrar cursos gratuitos e confiáveis organizados por nível de dificuldade para começar meus estudos?"</li>
+                <li><strong>Cenário 2:</strong> "Já concluí diversos cursos em diferentes plataformas de ensino. Como posso organizar e exibir meus certificados de forma centralizada e apresentável em um único portfólio visual?"</li>
+            </ul>
+        </section>
+
+        <!-- 4. Esquema de Cores -->
+        <section>
+            <h2>4. Esquema de Cores</h2>
+            <p>O documento e o site utilizarão as seguintes cores principais:</p>
+            
+            <div class="color-palette">
+                <div class="color-box bg-primary">
+                    #1e293b<br>Azul Escuro (Primária)
+                </div>
+                <div class="color-box bg-secondary">
+                    #0284c7<br>Azul Oceano (Secundária)
+                </div>
+                <div class="color-box bg-accent">
+                    #f59e0b<br>Âmbar (Acento)
+                </div>
+                <div class="color-box bg-light">
+                    #f8fafc<br>Cinza Claro (Fundo)
+                </div>
+            </div>
+
+            <p><strong>Aplicações no site:</strong></p>
+            <ul>
+                <li><strong>Azul Escuro (#1e293b):</strong> Utilizado no cabeçalho (header), rodapé (footer), bordas principais e textos de destaque.</li>
+                <li><strong>Azul Oceano (#0284c7):</strong> Utilizado nos títulos das seções (h2, h3), links, botões primários e elementos de navegação.</li>
+                <li><strong>Âmbar / Dourado (#f59e0b):</strong> Utilizado em botões de ação (Call to Action), badges de destaque em certificados e detalhes de acento.</li>
+                <li><strong>Cinza Claro (#f8fafc):</strong> Utilizado como cor de fundo geral da aplicação para garantir alto contraste e leitura confortável.</li>
+            </ul>
+        </section>
+
+        <!-- 6. Tipografia -->
+        <section>
+            <h2>5. Tipografia</h2>
+            <p>Fontes escolhidas para o projeto:</p>
+            <ul>
+                <li><strong>Fonte de Títulos (Heading Font):</strong> <code>Roboto</code> (ou Arial / Sans-serif como fallback).
+                    <br><em>Aplicação:</em> Usada nos títulos de nível <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> e <code>&lt;h3&gt;</code> para passar uma estética moderna, clara e técnica.
+                </li>
+                <li><strong>Fonte do Corpo (Body Font):</strong> <code>Open Sans</code> (ou Helvetica / Sans-serif como fallback).
+                    <br><em>Aplicação:</em> Usada em parágrafos, listas, botões, modais e cards para otimizar a legibilidade em diferentes tamanhos de tela.
+                </li>
+            </ul>
+        </section>
+
+        <!-- 7. Wireframe -->
+        <section>
+            <h2>6. Wireframes da Página Inicial</h2>
+            <p>Estrutura de layout planejada para a visualização mobile e desktop da página inicial (<code>index.html</code>):</p>
+            
+            <div class="wireframe-container">
+                <div class="wireframe-box">
+                    <h3>Visualização Mobile (Telas Pequenas)</h3>
+                    <div class="wireframe-sketch">
+                        [Header / Logo / Nav Menus]<br><br>
+                        [Hero Banner: Apresentação]<br><br>
+                        [Roadmaps de TI (Coluna Única)]<br><br>
+                        [Métricas & Estatísticas]<br><br>
+                        [Destaque de Certificados]<br><br>
+                        [Footer / Direitos Autorais]
+                    </div>
+                </div>
+
+                <div class="wireframe-box">
+                    <h3>Visualização Desktop (Telas Grandes)</h3>
+                    <div class="wireframe-sketch">
+                        [Header | Logo ------------ Navigation Bar]<br><br>
+                        [Hero Banner: Chamada + Imagem Ilustrativa]<br><br>
+                        [Roadmaps: | Frontend | Backend | Dados |]<br><br>
+                        [Grid Métricas  |  Mural de Certificados]<br><br>
+                        [Footer: Links Rápidos | Contato | Copyright]
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DevAcademy & Certs - Documento de Planejamento do Site para a WDD 231</p>
+    </footer>
+
+</body>
+</html>
