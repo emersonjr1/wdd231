@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevAcademy & Certs</title>
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+    <!-- Cabeçalho & Navegação -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i> DevAcademy & Certs
+            </a>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#catalogo" class="nav-link">Catálogo de Cursos</a></li>
+                    <li><a href="#roadmaps" class="nav-link">Roadmaps</a></li>
+                    <li><a href="#dashboard" class="nav-link">Meu Painel</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Hero Banner -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Capacitação Gratuita em TI & Portfólio de Certificados</h1>
+                    <p>Encontre os melhores cursos e bootcamps gratuitos do mercado, organize sua jornada com roadmaps estruturados e exiba suas conquistas em um único lugar.</p>
+                    <div class="hero-buttons">
+                        <a href="#catalogo" class="btn btn-accent">Explorar Cursos</a>
+                        <a href="#dashboard" class="btn btn-outline">Ver Meus Certificados</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-card-mockup">
+                        <i class="fas fa-laptop-code mockup-icon"></i>
+                        <h3>Ecossistema Dev</h3>
+                        <p>Evolua suas habilidades do zero ao avançado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Roadmaps -->
+        <section id="roadmaps" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Roadmaps de Carreira</h2>
+                    <p>Escolha sua trilha de estudos recomendada para iniciar ou avançar na carreira tech</p>
+                </div>
+                <div class="roadmap-grid">
+                    <div class="roadmap-card">
+                        <div class="roadmap-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>Frontend</h3>
+                        <p>Domine HTML, CSS, JavaScript moderno, React e arquitetura de interfaces interativas.</p>
+                        <span class="badge badge-level">Iniciante ao Avançado</span>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-icon"><i class="fas fa-server"></i></div>
+                        <h3>Backend</h3>
+                        <p>Construa APIs robustas com Node.js, bancos de dados SQL/NoSQL e microsserviços.</p>
+                        <span class="badge badge-level">Intermediário</span>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-icon"><i class="fas fa-database"></i></div>
+                        <h3>Dados</h3>
+                        <p>Explore análise e ciência de dados com Python, Pandas, SQL e visualização estatística.</p>
+                        <span class="badge badge-level">Iniciante</span>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Redes</h3>
+                        <p>Compreenda protocolos TCP/IP, arquitetura de redes, segurança e infraestrutura em nuvem AWS.</p>
+                        <span class="badge badge-level">Iniciante ao Intermediário</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo Interativo -->
+        <section id="catalogo" class="section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Catálogo Interativo de Cursos</h2>
+                    <p>Pesquise e filtre capacitações gratuitas em TI</p>
+                </div>
+
+                <!-- Barra de Filtros -->
+                <div class="filter-bar">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar por título ou descrição...">
+                    </div>
+                    <div class="filter-dropdowns">
+                        <select id="categoryFilter">
+                            <option value="all">Todas as Categorias</option>
+                            <option value="Frontend">Frontend</option>
+                            <option value="Backend">Backend</option>
+                            <option value="Dados">Dados</option>
+                            <option value="Redes">Redes</option>
+                        </select>
+                        <select id="levelFilter">
+                            <option value="all">Todos os Níveis</option>
+                            <option value="Iniciante">Iniciante</option>
+                            <option value="Intermediário">Intermediário</option>
+                            <option value="Avançado">Avançado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Grid de Cursos -->
+                <div id="coursesGrid" class="courses-grid">
+                    <!-- Dinamicamente preenchido via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Meu Painel / Certificados & Salvos -->
+        <section id="dashboard" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Painel do Estudante</h2>
+                    <p>Gerencie seus cursos salvos e portfólio público de certificados</p>
+                </div>
+
+                <!-- Métricas do Painel -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                            <h3 id="totalCoursesCount">0</h3>
+                            <p>Cursos no Catálogo</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <i class="fas fa-bookmark"></i>
+                        <div>
+                            <h3 id="savedCount">0</h3>
+                            <p>Cursos Salvos</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <h3 id="certCount">0</h3>
+                            <p>Certificados Cadastrados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abas do Painel -->
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" data-tab="tab-certs">Meus Certificados</button>
+                    <button class="tab-btn" data-tab="tab-saved">Cursos Salvos</button>
+                </div>
+
+                <!-- Conteúdo Aba Certificados -->
+                <div id="tab-certs" class="tab-content active">
+                    <div class="dashboard-header-action">
+                        <h3>Mural de Certificados Conquistados</h3>
+                        <button class="btn btn-accent btn-sm" id="addCertBtn"><i class="fas fa-plus"></i> Adicionar Certificado</button>
+                    </div>
+                    <div id="certificatesGrid" class="certificates-grid">
+                        <!-- Preenchido via JS -->
+                    </div>
+                </div>
+
+                <!-- Conteúdo Aba Cursos Salvos -->
+                <div id="tab-saved" class="tab-content">
+                    <h3>Cursos de Interesse Salvos</h3>
+                    <div id="savedCoursesContainer" class="saved-container">
+                        <!-- Preenchido via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Ementa do Curso -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modalTitle">Título do Curso</h3>
+            <div id="modalBody">
+                <!-- Ementa detalhada -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Adicionar Certificado -->
+    <div id="certModal" class="modal">
+        <div class="modal-content">
+            <span class="close-cert-modal">&times;</span>
+            <h3>Cadastrar Novo Certificado</h3>
+            <form id="certForm">
+                <div class="form-group">
+                    <label for="certTitle">Título do Certificado / Curso</label>
+                    <input type="text" id="certTitle" required placeholder="Ex: React Avançado">
+                </div>
+                <div class="form-group">
+                    <label for="certPlatform">Plataforma / Instituição</label>
+                    <input type="text" id="certPlatform" required placeholder="Ex: DevAcademy">
+                </div>
+                <div class="form-group">
+                    <label for="certDate">Data de Conclusão</label>
+                    <input type="date" id="certDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="certId">ID da Credencial (Opcional)</label>
+                    <input type="text" id="certId" placeholder="Ex: CERT-12345">
+                </div>
+                <div class="form-group">
+                    <label for="certCategory">Categoria</label>
+                    <select id="certCategory">
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Dados">Dados</option>
+                        <option value="Redes">Redes</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-accent" style="width: 100%;">Salvar Certificado</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <a href="#" class="logo footer-logo"><i class="fas fa-graduation-cap"></i> DevAcademy & Certs</a>
+                <p>Capacitação gratuita em TI e gerenciamento de portfólio acadêmico para desenvolvedores.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#roadmaps">Roadmaps</a></li>
+                    <li><a href="#dashboard">Meu Painel</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato & Suporte</h4>
+                <p><i class="fas fa-envelope"></i> contato@devacademy.local</p>
+                <p><i class="fas fa-globe"></i> WDD 231 Project</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DevAcademy & Certs - Documento de Planejamento do Site para a WDD 231</p>
+        </div>
+    </footer>
+
+    <!-- Script JS como Módulo ES -->
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
