@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Diretório de empresas e membros associados à Câmara de Comércio de Piracicaba. Conecte-se com o comércio local.">
+    <meta name="description" content="Conheça a história, cultura e os principais pontos de interesse de Piracicaba na página Sobre a Câmara.">
     <meta name="author" content="Emerson Maximo Junior">
 
-    <title>Câmara de Comércio de Piracicaba | Diretório de Membros</title>
+    <title>Câmara de Comércio de Piracicaba | Sobre a Câmara</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./imagens/Logo_maos.ico" type="image/x-icon">
 
-    <!-- CSS (Apenas normalize + telas-pequenas + telas-grandes) -->
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="./estilos/normalize.css">
     <link rel="stylesheet" href="./estilos/telas-pequenas.css">
     <link rel="stylesheet" href="./estilos/telas-grandes.css">
 
-    <!-- Metadados Open Graph (Facebook / LinkedIn / WhatsApp) -->
+    <!-- Metadados Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Diretório de Membros - Câmara de Comércio de Piracicaba">
-    <meta property="og:description" content="Explore o diretório das empresas parceiras e associadas da nossa região.">
+    <meta property="og:title" content="Câmara de Comércio de Piracicaba | Sobre a Câmara">
+    <meta property="og:description" content="Descubra a infraestrutura, cultura e atrativos turísticos de Piracicaba.">
     <meta property="og:image" content="https://emersonmaximo.github.io/wdd231/camara/imagens/hero_piracicaba.jpg">
-    <meta property="og:url" content="https://emersonmaximo.github.io/wdd231/camara/diretorio.html">
-    <meta property="og:site_name" content="Câmara de Comércio de Piracicaba">
+    <meta property="og:url" content="https://emersonmaximo.github.io/wdd231/camara/sobre.html">
 
-    <!-- Metadados X / Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Diretório de Membros - Câmara de Comércio de Piracicaba">
-    <meta name="twitter:description" content="Explore o diretório das empresas parceiras e associadas da nossa região.">
-    <meta name="twitter:image" content="https://emersonmaximo.github.io/wdd231/camara/imagens/hero_piracicaba.jpg">
-
-    <!-- Scripts da página -->
+    <!-- Scripts -->
     <script src="./scripts/camara.js" defer></script>
-    <script src="./scripts/Modulos/diretorio/diretorio.mjs" type="module"></script>
+    <script src="./scripts/sobre.mjs" type="module"></script>
 </head>
 <body>
     <header>
@@ -47,25 +40,29 @@
         <nav>
             <ul class="navegacao" id="menuNavegacao">
                 <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="diretorio.html" class="active">Diretório</a></li>
+                <li><a href="sobre.html" class="active">Sobre</a></li>
+                <li><a href="diretorio.html">Diretório</a></li>
                 <li><a href="associacao.html">Junte-se a Nós</a></li>
-                <li><a href="sobre.html">Sobre-nós</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="diretorio-container">
-        <h2>Diretório de Membros</h2>
+    <main class="container-sobre">
+        <section class="boas-vindas-visita" id="mensagemVisita">
+            <!-- Mensagem dinâmica injetada via localStorage no JS -->
+        </section>
 
-        <!-- Botões para alternância entre visualização em Grade e Lista -->
-        <div class="controles-view">
-            <button id="btnGrid" class="ativo" aria-label="Visualização em Grade">📱 Grade</button>
-            <button id="btnList" aria-label="Visualização em Lista">📄 Lista</button>
-        </div>
+        <section class="dados-demograficos">
+            <h2>Sobre Piracicaba</h2>
+            <p>Piracicaba é um importante polo industrial, tecnológico e educacional do estado de São Paulo. Conhecida pela rica cultura caipira, gastronomia única e relevância no setor de agronegócio e biocombustíveis.</p>
+        </section>
 
-        <!-- Container dinâmico onde o directory.mjs injetará os membros -->
-        <section id="membrosContainer" class="grid-view">
-            <!-- Conteúdo gerado via JS -->
+        <section class="galeria-interesses">
+            <h2 class="titulo-galeria">Pontos de Interesse da Região</h2>
+            <div class="grid-cartoes" id="gridCartoes">
+                <!-- 8 cartões injetados dinamicamente via JS do arquivo JSON/.mjs -->
+            </div>
         </section>
     </main>
 

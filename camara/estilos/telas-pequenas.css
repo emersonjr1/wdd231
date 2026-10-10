@@ -399,3 +399,51 @@ footer {
 .redes-sociais img:hover {
   transform: scale(1.15);
 }
+
+/* Container de Mensagem de Boas-Vindas */
+.boas-vindas-visita {
+    background-color: #f0f4f8;
+    color: #1a365d;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 5px solid #0056b3;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estrutura do Grid de Áreas Nomeadas (Mobile - 1 coluna sequencial) */
+.grid-cartoes {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "item1"
+        "item2"
+        "item3"
+        "item4"
+        "item5"
+        "item6"
+        "item7"
+        "item8";
+}
+
+.card-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card-item img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Sem efeito de hover nas imagens para dispositivos móveis */
+.card-item img:hover {
+    transform: none;
+    filter: none;
+}
