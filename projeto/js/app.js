@@ -13,7 +13,7 @@ let userCertificates = JSON.parse(localStorage.getItem('devacademy_certs')) || [
 
 async function initApp() {
     setupMobileMenu();
-    setupSmoothScroll();
+    setupSmoothScrollAndWayfinding();
     setupTabs();
     setupEventListeners();
     loadCoursesData();
@@ -23,15 +23,20 @@ async function initApp() {
 }
 
 function setupMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+    
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
+
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
+                hamburger.setAttribute('aria-expanded', 'false');
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });
@@ -39,7 +44,11 @@ function setupMobileMenu() {
     }
 }
 
-function setupSmoothScroll() {
+function setupSmoothScrollAndWayfinding() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
@@ -51,16 +60,45 @@ function setupSmoothScroll() {
             }
         });
     });
+
+    // Wayfinding via IntersectionObserver
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const activeId = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${activeId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
 }
 
 function setupTabs() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
+
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
+            tabBtns.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+            });
             tabContents.forEach(c => c.classList.remove('active'));
+
             btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
             const targetId = btn.getAttribute('data-tab');
             const targetContent = document.getElementById(targetId);
             if (targetContent) targetContent.classList.add('active');
@@ -69,8 +107,12 @@ function setupTabs() {
 }
 
 function loadCoursesData() {
-    allCourses = cursosData;
-    renderCourses(allCourses);
+    try {
+        allCourses = cursosData;
+        renderCourses(allCourses);
+    } catch (error) {
+        console.error("Erro ao carregar os dados dos cursos:", error);
+    }
 }
 
 function renderCourses(courses) {
@@ -85,7 +127,7 @@ function renderCourses(courses) {
     grid.innerHTML = courses.map(course => {
         const isSaved = savedCourses.some(c => c.id === course.id);
         return `
-            <div class="course-card" data-category="${course.category}" data-level="${course.level}">
+            <article class="course-card" data-category="${course.category}" data-level="${course.level}">
                 <div class="course-header">
                     <span class="badge badge-category">${course.category}</span>
                     <span class="badge badge-level">${course.level}</span>
@@ -93,16 +135,16 @@ function renderCourses(courses) {
                 <h3 class="course-title">${course.title}</h3>
                 <p class="course-desc">${course.description}</p>
                 <div class="course-meta">
-                    <span><i class="fas fa-clock"></i> ${course.duration}</span>
-                    <span><i class="fas fa-laptop-code"></i> ${course.platform}</span>
+                    <span><i class="fas fa-clock" aria-hidden="true"></i> ${course.duration}</span>
+                    <span><i class="fas fa-laptop-code" aria-hidden="true"></i> ${course.platform}</span>
                 </div>
                 <div class="course-footer">
                     <button class="btn btn-secondary btn-sm" onclick="openCourseModal(${course.id})">Ver Ementa</button>
-                    <button class="btn ${isSaved ? 'btn-accent' : 'btn-outline'} btn-sm" onclick="toggleSaveCourse(${course.id})">
-                        <i class="${isSaved ? 'fas' : 'far'} fa-bookmark"></i> ${isSaved ? 'Salvo' : 'Salvar'}
+                    <button class="btn ${isSaved ? 'btn-accent' : 'btn-outline'} btn-sm" onclick="toggleSaveCourse(${course.id})" aria-label="${isSaved ? 'Remover curso dos salvos' : 'Salvar curso'}">
+                        <i class="${isSaved ? 'fas' : 'far'} fa-bookmark" aria-hidden="true"></i> ${isSaved ? 'Salvo' : 'Salvar'}
                     </button>
                 </div>
-            </div>
+            </article>
         `;
     }).join('');
 }
@@ -113,7 +155,7 @@ function setupEventListeners() {
     const levelFilter = document.getElementById('levelFilter');
 
     const filterHandler = () => {
-        const query = searchInput ? searchInput.value.toLowerCase() : '';
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
         const category = categoryFilter ? categoryFilter.value : 'all';
         const level = levelFilter ? levelFilter.value : 'all';
 
@@ -131,26 +173,31 @@ function setupEventListeners() {
     if (categoryFilter) categoryFilter.addEventListener('change', filterHandler);
     if (levelFilter) levelFilter.addEventListener('change', filterHandler);
 
-    const modal = document.getElementById('courseModal');
-    const closeBtn = document.querySelector('.close-modal');
-    if (closeBtn && modal) {
-        closeBtn.addEventListener('click', () => modal.style.display = 'none');
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) modal.style.display = 'none';
-        });
+    // Fechar Modal Ementa
+    const courseModal = document.getElementById('courseModal');
+    const closeCourseModalBtn = document.getElementById('closeCourseModalBtn');
+    if (closeCourseModalBtn && courseModal) {
+        closeCourseModalBtn.addEventListener('click', () => closeModal(courseModal));
     }
 
+    // Fechar Modal Certificado
     const certModal = document.getElementById('certModal');
     const addCertBtn = document.getElementById('addCertBtn');
-    const closeCertModal = document.querySelector('.close-cert-modal');
+    const closeCertModalBtn = document.getElementById('closeCertModalBtn');
     const certForm = document.getElementById('certForm');
 
     if (addCertBtn && certModal) {
-        addCertBtn.addEventListener('click', () => certModal.style.display = 'block');
+        addCertBtn.addEventListener('click', () => openModal(certModal));
     }
-    if (closeCertModal && certModal) {
-        closeCertModal.addEventListener('click', () => certModal.style.display = 'none');
+    if (closeCertModalBtn && certModal) {
+        closeCertModalBtn.addEventListener('click', () => closeModal(certModal));
     }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === courseModal) closeModal(courseModal);
+        if (e.target === certModal) closeModal(certModal);
+    });
+
     if (certForm) {
         certForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -167,10 +214,22 @@ function setupEventListeners() {
             renderCertificates();
             updateDashboardMetrics();
             certForm.reset();
-            if (certModal) certModal.style.display = 'none';
+            if (certModal) closeModal(certModal);
             showToast('Certificado adicionado com sucesso!');
         });
     }
+}
+
+function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+}
+
+function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
 }
 
 window.openCourseModal = function(id) {
@@ -193,11 +252,11 @@ window.openCourseModal = function(id) {
             <p style="margin-top: 15px;"><strong>Descrição:</strong> ${course.description}</p>
             <h4 style="margin-top: 20px; color: var(--primary-color);">Ementa do Curso:</h4>
             <ul class="syllabus-list">
-                ${course.syllabus.map(item => `<li><i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> ${item}</li>`).join('')}
+                ${course.syllabus.map(item => `<li><i class="fas fa-check-circle" style="color: var(--secondary-color);" aria-hidden="true"></i> ${item}</li>`).join('')}
             </ul>
         `;
     }
-    if (modal) modal.style.display = 'block';
+    openModal(modal);
 };
 
 window.toggleSaveCourse = function(id) {
@@ -239,9 +298,9 @@ function renderSavedCourses() {
         <div class="saved-item">
             <div>
                 <h4>${course.title}</h4>
-                <small>${course.platform} • ${course.duration} • <span class="badge badge-level">${course.level}</span></small>
+                <p style="font-size: 0.88rem; color: var(--text-muted);">${course.platform} • ${course.duration} • <span class="badge badge-level">${course.level}</span></p>
             </div>
-            <button class="btn btn-outline btn-sm" onclick="toggleSaveCourse(${course.id})"><i class="fas fa-trash-alt"></i> Remover</button>
+            <button class="btn btn-outline btn-sm" onclick="toggleSaveCourse(${course.id})" aria-label="Remover ${course.title}"><i class="fas fa-trash-alt" aria-hidden="true"></i> Remover</button>
         </div>
     `).join('');
 }
@@ -256,16 +315,16 @@ function renderCertificates() {
     }
 
     grid.innerHTML = userCertificates.map(cert => `
-        <div class="cert-card">
-            <div class="cert-badge"><i class="fas fa-award"></i></div>
+        <article class="cert-card">
+            <div class="cert-badge"><i class="fas fa-award" aria-hidden="true"></i></div>
             <div class="cert-info">
                 <h4>${cert.title}</h4>
                 <p><strong>Plataforma:</strong> ${cert.platform} | <strong>Data:</strong> ${cert.date}</p>
                 <p><small>ID da Credencial: ${cert.credentialId}</small></p>
-                <span class="badge badge-category">${cert.category}</span>
+                <span class="badge badge-category" style="margin-top: 5px;">${cert.category}</span>
             </div>
-            <button class="btn btn-outline btn-sm" onclick="deleteCertificate(${cert.id})" title="Excluir"><i class="fas fa-trash"></i></button>
-        </div>
+            <button class="btn btn-outline btn-sm" onclick="deleteCertificate(${cert.id})" title="Excluir certificado" aria-label="Excluir certificado ${cert.title}"><i class="fas fa-trash" aria-hidden="true"></i></button>
+        </article>
     `).join('');
 }
 

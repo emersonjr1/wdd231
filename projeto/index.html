@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevAcademy & Certs</title>
+    <meta name="description" content="DevAcademy & Certs - Capacitação gratuita em TI, roadmaps de carreira e portfólio público de certificados.">
+    <meta name="keywords" content="TI, Cursos Grátis, Programação, Frontend, Backend, Dados, Redes, Certificados">
+    <meta name="author" content="Emerson Junior">
+    <meta name="theme-color" content="#1e293b">
+    <title>DevAcademy & Certs | Capacitação Gratuita em TI</title>
+
     <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
@@ -18,22 +25,22 @@
     <!-- Cabeçalho & Navegação -->
     <header class="header">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <i class="fas fa-graduation-cap"></i> DevAcademy & Certs
+            <a href="#home" class="logo" aria-label="Página Inicial DevAcademy & Certs">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i> <span>DevAcademy & Certs</span>
             </a>
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="navMenu" aria-label="Menu Principal">
                 <ul class="nav-list">
-                    <li><a href="#home" class="nav-link">Início</a></li>
-                    <li><a href="#catalogo" class="nav-link">Catálogo de Cursos</a></li>
+                    <li><a href="#home" class="nav-link active">Início</a></li>
                     <li><a href="#roadmaps" class="nav-link">Roadmaps</a></li>
+                    <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
                     <li><a href="#dashboard" class="nav-link">Meu Painel</a></li>
                 </ul>
             </nav>
-            <div class="hamburger">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </header>
 
@@ -47,14 +54,14 @@
                     <p>Encontre os melhores cursos e bootcamps gratuitos do mercado, organize sua jornada com roadmaps estruturados e exiba suas conquistas em um único lugar.</p>
                     <div class="hero-buttons">
                         <a href="#catalogo" class="btn btn-accent">Explorar Cursos</a>
-                        <a href="#dashboard" class="btn btn-outline">Ver Meus Certificados</a>
+                        <a href="#dashboard" class="btn btn-outline-hero">Ver Meus Certificados</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="hero-card-mockup">
-                        <i class="fas fa-laptop-code mockup-icon"></i>
-                        <h3>Ecossistema Dev</h3>
-                        <p>Evolua suas habilidades do zero ao avançado.</p>
+                        <i class="fas fa-laptop-code mockup-icon" aria-hidden="true"></i>
+                        <h2>Ecossistema Dev</h2>
+                        <p>Evolua suas habilidades em programação, infraestrutura e dados do zero ao avançado.</p>
                     </div>
                 </div>
             </div>
@@ -68,30 +75,30 @@
                     <p>Escolha sua trilha de estudos recomendada para iniciar ou avançar na carreira tech</p>
                 </div>
                 <div class="roadmap-grid">
-                    <div class="roadmap-card">
-                        <div class="roadmap-icon"><i class="fas fa-paint-brush"></i></div>
+                    <article class="roadmap-card">
+                        <div class="roadmap-icon"><i class="fas fa-paint-brush" aria-hidden="true"></i></div>
                         <h3>Frontend</h3>
                         <p>Domine HTML, CSS, JavaScript moderno, React e arquitetura de interfaces interativas.</p>
                         <span class="badge badge-level">Iniciante ao Avançado</span>
-                    </div>
-                    <div class="roadmap-card">
-                        <div class="roadmap-icon"><i class="fas fa-server"></i></div>
+                    </article>
+                    <article class="roadmap-card">
+                        <div class="roadmap-icon"><i class="fas fa-server" aria-hidden="true"></i></div>
                         <h3>Backend</h3>
                         <p>Construa APIs robustas com Node.js, bancos de dados SQL/NoSQL e microsserviços.</p>
                         <span class="badge badge-level">Intermediário</span>
-                    </div>
-                    <div class="roadmap-card">
-                        <div class="roadmap-icon"><i class="fas fa-database"></i></div>
+                    </article>
+                    <article class="roadmap-card">
+                        <div class="roadmap-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
                         <h3>Dados</h3>
                         <p>Explore análise e ciência de dados com Python, Pandas, SQL e visualização estatística.</p>
                         <span class="badge badge-level">Iniciante</span>
-                    </div>
-                    <div class="roadmap-card">
-                        <div class="roadmap-icon"><i class="fas fa-network-wired"></i></div>
+                    </article>
+                    <article class="roadmap-card">
+                        <div class="roadmap-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
                         <h3>Redes</h3>
                         <p>Compreenda protocolos TCP/IP, arquitetura de redes, segurança e infraestrutura em nuvem AWS.</p>
                         <span class="badge badge-level">Iniciante ao Intermediário</span>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -107,28 +114,35 @@
                 <!-- Barra de Filtros -->
                 <div class="filter-bar">
                     <div class="search-box">
-                        <i class="fas fa-search"></i>
+                        <label for="searchInput" class="sr-only">Buscar por título ou descrição</label>
+                        <i class="fas fa-search search-icon" aria-hidden="true"></i>
                         <input type="text" id="searchInput" placeholder="Buscar por título ou descrição...">
                     </div>
                     <div class="filter-dropdowns">
-                        <select id="categoryFilter">
-                            <option value="all">Todas as Categorias</option>
-                            <option value="Frontend">Frontend</option>
-                            <option value="Backend">Backend</option>
-                            <option value="Dados">Dados</option>
-                            <option value="Redes">Redes</option>
-                        </select>
-                        <select id="levelFilter">
-                            <option value="all">Todos os Níveis</option>
-                            <option value="Iniciante">Iniciante</option>
-                            <option value="Intermediário">Intermediário</option>
-                            <option value="Avançado">Avançado</option>
-                        </select>
+                        <div class="select-group">
+                            <label for="categoryFilter" class="sr-only">Filtrar por categoria</label>
+                            <select id="categoryFilter">
+                                <option value="all">Todas as Categorias</option>
+                                <option value="Frontend">Frontend</option>
+                                <option value="Backend">Backend</option>
+                                <option value="Dados">Dados</option>
+                                <option value="Redes">Redes</option>
+                            </select>
+                        </div>
+                        <div class="select-group">
+                            <label for="levelFilter" class="sr-only">Filtrar por nível</label>
+                            <select id="levelFilter">
+                                <option value="all">Todos os Níveis</option>
+                                <option value="Iniciante">Iniciante</option>
+                                <option value="Intermediário">Intermediário</option>
+                                <option value="Avançado">Avançado</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Grid de Cursos -->
-                <div id="coursesGrid" class="courses-grid">
+                <div id="coursesGrid" class="courses-grid" aria-live="polite">
                     <!-- Dinamicamente preenchido via app.js -->
                 </div>
             </div>
@@ -145,39 +159,39 @@
                 <!-- Métricas do Painel -->
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <i class="fas fa-book-open"></i>
+                        <i class="fas fa-book-open" aria-hidden="true"></i>
                         <div>
-                            <h3 id="totalCoursesCount">0</h3>
-                            <p>Cursos no Catálogo</p>
+                            <p class="metric-value" id="totalCoursesCount">0</p>
+                            <p class="metric-label">Cursos no Catálogo</p>
                         </div>
                     </div>
                     <div class="metric-card">
-                        <i class="fas fa-bookmark"></i>
+                        <i class="fas fa-bookmark" aria-hidden="true"></i>
                         <div>
-                            <h3 id="savedCount">0</h3>
-                            <p>Cursos Salvos</p>
+                            <p class="metric-value" id="savedCount">0</p>
+                            <p class="metric-label">Cursos Salvos</p>
                         </div>
                     </div>
                     <div class="metric-card">
-                        <i class="fas fa-award"></i>
+                        <i class="fas fa-award" aria-hidden="true"></i>
                         <div>
-                            <h3 id="certCount">0</h3>
-                            <p>Certificados Cadastrados</p>
+                            <p class="metric-value" id="certCount">0</p>
+                            <p class="metric-label">Certificados Cadastrados</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Abas do Painel -->
-                <div class="dashboard-tabs">
-                    <button class="tab-btn active" data-tab="tab-certs">Meus Certificados</button>
-                    <button class="tab-btn" data-tab="tab-saved">Cursos Salvos</button>
+                <div class="dashboard-tabs" role="tablist" aria-label="Opções do Painel">
+                    <button class="tab-btn active" id="tabBtnCerts" role="tab" aria-selected="true" aria-controls="tab-certs" data-tab="tab-certs">Meus Certificados</button>
+                    <button class="tab-btn" id="tabBtnSaved" role="tab" aria-selected="false" aria-controls="tab-saved" data-tab="tab-saved">Cursos Salvos</button>
                 </div>
 
                 <!-- Conteúdo Aba Certificados -->
-                <div id="tab-certs" class="tab-content active">
+                <div id="tab-certs" class="tab-content active" role="tabpanel" aria-labelledby="tabBtnCerts">
                     <div class="dashboard-header-action">
                         <h3>Mural de Certificados Conquistados</h3>
-                        <button class="btn btn-accent btn-sm" id="addCertBtn"><i class="fas fa-plus"></i> Adicionar Certificado</button>
+                        <button class="btn btn-accent btn-sm" id="addCertBtn"><i class="fas fa-plus" aria-hidden="true"></i> Adicionar Certificado</button>
                     </div>
                     <div id="certificatesGrid" class="certificates-grid">
                         <!-- Preenchido via JS -->
@@ -185,7 +199,7 @@
                 </div>
 
                 <!-- Conteúdo Aba Cursos Salvos -->
-                <div id="tab-saved" class="tab-content">
+                <div id="tab-saved" class="tab-content" role="tabpanel" aria-labelledby="tabBtnSaved">
                     <h3>Cursos de Interesse Salvos</h3>
                     <div id="savedCoursesContainer" class="saved-container">
                         <!-- Preenchido via JS -->
@@ -196,9 +210,9 @@
     </main>
 
     <!-- Modal de Ementa do Curso -->
-    <div id="courseModal" class="modal">
+    <div id="courseModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <button class="close-modal" id="closeCourseModalBtn" aria-label="Fechar modal de ementa">&times;</button>
             <h3 id="modalTitle">Título do Curso</h3>
             <div id="modalBody">
                 <!-- Ementa detalhada -->
@@ -207,10 +221,10 @@
     </div>
 
     <!-- Modal de Adicionar Certificado -->
-    <div id="certModal" class="modal">
+    <div id="certModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="certModalTitle">
         <div class="modal-content">
-            <span class="close-cert-modal">&times;</span>
-            <h3>Cadastrar Novo Certificado</h3>
+            <button class="close-cert-modal" id="closeCertModalBtn" aria-label="Fechar modal de cadastro">&times;</button>
+            <h3 id="certModalTitle">Cadastrar Novo Certificado</h3>
             <form id="certForm">
                 <div class="form-group">
                     <label for="certTitle">Título do Certificado / Curso</label>
@@ -237,7 +251,7 @@
                         <option value="Redes">Redes</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-accent" style="width: 100%;">Salvar Certificado</button>
+                <button type="submit" class="btn btn-accent btn-block">Salvar Certificado</button>
             </form>
         </div>
     </div>
@@ -246,22 +260,22 @@
     <footer class="footer">
         <div class="container footer-content">
             <div>
-                <a href="#" class="logo footer-logo"><i class="fas fa-graduation-cap"></i> DevAcademy & Certs</a>
+                <a href="#home" class="logo footer-logo" aria-label="Home DevAcademy & Certs"><i class="fas fa-graduation-cap" aria-hidden="true"></i> <span>DevAcademy & Certs</span></a>
                 <p>Capacitação gratuita em TI e gerenciamento de portfólio acadêmico para desenvolvedores.</p>
             </div>
             <div class="footer-links">
                 <h4>Links Rápidos</h4>
                 <ul>
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#catalogo">Catálogo</a></li>
                     <li><a href="#roadmaps">Roadmaps</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
                     <li><a href="#dashboard">Meu Painel</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h4>Contato & Suporte</h4>
-                <p><i class="fas fa-envelope"></i> contato@devacademy.local</p>
-                <p><i class="fas fa-globe"></i> WDD 231 Project</p>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@devacademy.local</p>
+                <p><i class="fas fa-globe" aria-hidden="true"></i> Projeto WDD 231</p>
             </div>
         </div>
         <div class="footer-bottom">

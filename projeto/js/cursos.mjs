@@ -1,4 +1,3 @@
-// Módulo ES contendo os dados dos cursos em JSON
 export const cursosData = [
     {
         "id": 1,
@@ -22,7 +21,7 @@ export const cursosData = [
         "level": "Intermediário",
         "platform": "DevAcademy",
         "duration": "60 horas",
-        "description": "Domina a biblioteca mais popular do mercado para criação de aplicações web reativas e componentizadas.",
+        "description": "Domine a biblioteca mais popular do mercado para criação de aplicações web reativas e componentizadas.",
         "syllabus": [
             "Módulo 1: Fundamentos de React e JSX",
             "Módulo 2: Componentes, Props e State",
